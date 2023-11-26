@@ -1,6 +1,6 @@
-def is_not_palindromic(n):
+def is_palindromic(n):
     str_number = str(n)
-    return str_number != str_number[::-1]
+    return str_number == str_number[::-1]
 
 
 def is_not_positive(n):
@@ -9,12 +9,13 @@ def is_not_positive(n):
 def run():
     input()
     n = [int(i) for i in input().split()]
-    if all([is_not_positive(i) for i in n]):
+    if any([is_not_positive(i) for i in n]):
         print("False")
         return 
-    if all([is_not_palindromic(i) for i in n]):
-        print("False")
+    if any([is_palindromic(i) for i in n]):
+        print("True")
         return 
-    print("True")
+    print("False")
 
 run()
+
